@@ -6,7 +6,7 @@
 
 #include "zmk-helpers/helper.h"
 #include "includes/cornix54.h"
-#include <locale/keys_ru.h>
+#include "keys_ru.h"
 
 // tap windows for ctl alt and gui
 
