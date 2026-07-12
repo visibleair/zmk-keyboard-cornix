@@ -17,6 +17,12 @@ include:
     # shield: cornix_indicator
     artifact-name: cornix_left_default_nosd
 
+  # Diagnostic build: keep USB connected for logs and select OUT_BLE
+  # to reproduce Bluetooth freezes while typing wirelessly.
+  - board: cornix_left
+    snippet: zmk-usb-logging
+    artifact-name: cornix_left_debug_usb_logging_nosd
+
   - board: cornix_right
     # shield: cornix_indicator
     artifact-name: cornix_right_nosd
