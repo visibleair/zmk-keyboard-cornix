@@ -19,8 +19,17 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        scroll_encoder: scroll_encoder {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -96,7 +105,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&scroll_encoder SCRL_UP SCRL_DOWN>;
         };
 
         ru {
@@ -118,7 +127,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&scroll_encoder SCRL_UP SCRL_DOWN>;
         };
 
         nav {
@@ -141,7 +150,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&scroll_encoder SCRL_UP SCRL_DOWN>;
         };
 
         sym_en {
@@ -163,7 +172,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&scroll_encoder SCRL_UP SCRL_DOWN>;
         };
 
         sym_ru {
@@ -185,7 +194,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&scroll_encoder SCRL_UP SCRL_DOWN>;
         };
 
         adj {
@@ -198,7 +207,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&scroll_encoder SCRL_UP SCRL_DOWN>;
         };
     };
 };
